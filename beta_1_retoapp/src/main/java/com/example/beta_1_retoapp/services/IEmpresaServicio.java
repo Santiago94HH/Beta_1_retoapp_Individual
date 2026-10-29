@@ -1,17 +1,18 @@
 package com.example.beta_1_retoapp.services;
 
 import java.util.List;
+import java.util.UUID;
 
-import com.example.beta_1_retoapp.models.Empresa;
+import com.example.beta_1_retoapp.dtos.EmpresaRequestDTO;
+import com.example.beta_1_retoapp.dtos.EmpresaResponseDTO;
+
 
 public interface IEmpresaServicio{
 
-    Empresa crearEmpresa(Empresa empresa);
-    List<Empresa> obtenerEmpresas();
-    Empresa Guardar(Empresa datos);
-    Empresa buscarEmpresaPorId(String id);
-    Empresa actualizarEmpresa(String id, Empresa empresa);
-    Empresa eliminarEmpresa(String id);
-    Empresa crearEmpresa1(Empresa empresa);
-    Empresa actualizarEmpresa1(String id, Empresa empresa);
+    EmpresaResponseDTO crear(EmpresaRequestDTO requestDTO);
+    List<EmpresaResponseDTO> listar();
+    EmpresaResponseDTO buscarPorId(UUID id);
+    EmpresaResponseDTO actualizar (UUID id, EmpresaRequestDTO requestDTO);
+    void eliminar (UUID id);
+
 }

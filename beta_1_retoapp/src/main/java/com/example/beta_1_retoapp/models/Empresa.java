@@ -35,10 +35,13 @@ public class Empresa {
     @Column (name = "telefono", nullable = false)
     private String telefono;
 
+    @Column (name = "activa")
+    private boolean activa;
+
     public Empresa() {
     }
 
-    public Empresa(UUID id, String nombre, String nit, String sector, String contacto, String correo, String telefono) {
+    public Empresa(UUID id, String nombre, String nit, String sector, String contacto, String correo, String telefono, boolean activa) {
         this.id = id;
         this.nombre = nombre;
         this.nit = nit;
@@ -46,6 +49,7 @@ public class Empresa {
         this.contacto = contacto;
         this.correo = correo;
         this.telefono = telefono;
+        this.activa = activa;
     }
 
     public UUID getId() {
@@ -102,6 +106,14 @@ public class Empresa {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public boolean getActiva(){
+        return activa;
+    }
+
+    public void setActiva(boolean activa){
+        this.activa = activa;
     }
 
 }
